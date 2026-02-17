@@ -1,6 +1,40 @@
 # unit-test-bootcamp
 単体テストを理解してAI開発効率化をする
 
+## 必要要件
+
+- **Git** 2.x 以上
+- **uv** 0.10 以上
+
+> Python 3.13 は `uv sync` 時に自動でインストールされるため、手動インストールは不要です。
+
+### uv のインストール
+
+```bash
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows (PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+### セットアップ
+
+```bash
+git clone <repo-url>
+cd unit-test-bootcamp
+uv sync
+uv run pre-commit install
+```
+
+### 動作確認
+
+```bash
+uv run pytest
+uv run ruff check .
+uv run pyright
+```
+
 ## IntEnum の使い方
 
 `Suit` と `Rank` は `IntEnum` を継承しています。普通の `Enum` と違い、**整数として比較・演算ができます**。
@@ -51,3 +85,4 @@ str(card)   # "ACE of SPADES"
 
 - `frozen=True` なのでカードの値は変更不可（イミュータブル）
 - `set()` に入れたり、重複チェックに使える
+
