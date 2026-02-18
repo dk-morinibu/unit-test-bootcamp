@@ -116,3 +116,11 @@ str(card)   # "ACE of SPADES"
 - `frozen=True` なのでカードの値は変更不可（イミュータブル）
 - `set()` に入れたり、重複チェックに使える
 
+### Poker
+[Rule](https://light-three.com/pokerroom-recommend/)
+
+### ゲームの実行
+
+```bash
+uv run python -m poker
+```
