@@ -6,21 +6,39 @@
 #### 準備
 
 - **Git** 2.x 以上
-- **uv** 0.10 以上
+- **mise** または **uv 0.10 以上**
 
 > Python 3.13 は `uv sync` 時に自動でインストールされるため、手動インストールは不要です。
 
-#### uv のインストール
+#### 方法A: mise を使う（推奨）
 
 ```bash
+# mise のインストール（macOS / Linux）
+curl https://mise.run | sh
+
+# Windows は https://mise.jdx.dev/getting-started.html を参照
+```
+
+```bash
+git clone <repo-url>
+cd unit-test-bootcamp
+mise trust
+mise install
+uv sync
+uv run pre-commit install
+```
+
+
+#### 方法B: uv を直接使う
+
+```bash
+# uvのインストール
 # macOS / Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Windows (PowerShell)
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-
-#### セットアップ
 
 ```bash
 git clone <repo-url>
