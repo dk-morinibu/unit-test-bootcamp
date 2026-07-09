@@ -4,7 +4,8 @@ from poker.evaluator import HandRank, evaluate_hand, format_hand_rank
 
 
 def format_hand(hand: list[Card]) -> str:
-    return " ".join(str(card) for card in hand)
+    sorted_hand = sorted(hand, key=lambda card: (card.rank, card.suit))
+    return " ".join(str(card) for card in sorted_hand)
 
 
 def format_player_hand(player_name: str, hand: list[Card], hand_rank: HandRank) -> str:
